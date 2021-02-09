@@ -127,7 +127,7 @@ uint8_t serial_read()
 {
   uint8_t tail = serial_rx_buffer_tail; // Temporary serial_rx_buffer_tail (to optimize for volatile)
   if (serial_rx_buffer_head == tail) {
-    return SERIAL_NO_DATA;
+    return SERIAL_NO_DATA; // 0xff return ediyor.
   } else {
     uint8_t data = serial_rx_buffer[tail];
 
